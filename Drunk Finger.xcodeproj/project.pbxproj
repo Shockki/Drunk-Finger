@@ -12,6 +12,9 @@
 		FA8195EA1FD9919D00D58C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8195E81FD9919D00D58C09 /* Main.storyboard */; };
 		FA8195EC1FD9919D00D58C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8195EB1FD9919D00D58C09 /* Assets.xcassets */; };
 		FA8195EF1FD9919D00D58C09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8195ED1FD9919D00D58C09 /* LaunchScreen.storyboard */; };
+		FA8195F71FD99A2500D58C09 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8195F61FD99A2500D58C09 /* TableViewCell.swift */; };
+		FA8195F91FD9A34600D58C09 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8195F81FD9A34600D58C09 /* TextViewController.swift */; };
+		FAC589CA1FE1A0B9000FC3EE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC589C91FE1A0B9000FC3EE /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		FA8195EB1FD9919D00D58C09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8195EE1FD9919D00D58C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA8195F01FD9919D00D58C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8195F61FD99A2500D58C09 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FA8195F81FD9A34600D58C09 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		FAC589C91FE1A0B9000FC3EE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				FA8195E41FD9919D00D58C09 /* AppDelegate.swift */,
 				FA8195E61FD9919D00D58C09 /* ViewController.swift */,
+				FA8195F81FD9A34600D58C09 /* TextViewController.swift */,
+				FA8195F61FD99A2500D58C09 /* TableViewCell.swift */,
+				FAC589C91FE1A0B9000FC3EE /* Data.swift */,
 				FA8195E81FD9919D00D58C09 /* Main.storyboard */,
 				FA8195EB1FD9919D00D58C09 /* Assets.xcassets */,
 				FA8195ED1FD9919D00D58C09 /* LaunchScreen.storyboard */,
@@ -136,8 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8195F71FD99A2500D58C09 /* TableViewCell.swift in Sources */,
+				FAC589CA1FE1A0B9000FC3EE /* Data.swift in Sources */,
 				FA8195E71FD9919D00D58C09 /* ViewController.swift in Sources */,
 				FA8195E51FD9919D00D58C09 /* AppDelegate.swift in Sources */,
+				FA8195F91FD9A34600D58C09 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TV745H5R48;
 				INFOPLIST_FILE = "Drunk Finger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "toli.Drunk-Finger";
@@ -289,6 +302,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TV745H5R48;
 				INFOPLIST_FILE = "Drunk Finger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "toli.Drunk-Finger";
