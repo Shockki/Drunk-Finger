@@ -14,6 +14,7 @@
 		FA8195EF1FD9919D00D58C09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8195ED1FD9919D00D58C09 /* LaunchScreen.storyboard */; };
 		FA8195F71FD99A2500D58C09 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8195F61FD99A2500D58C09 /* TableViewCell.swift */; };
 		FA8195F91FD9A34600D58C09 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8195F81FD9A34600D58C09 /* TextViewController.swift */; };
+		FA889C391FE3FB6F0028EEAF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA889C381FE3FB6F0028EEAF /* Button.swift */; };
 		FAC589CA1FE1A0B9000FC3EE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC589C91FE1A0B9000FC3EE /* Data.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		FA8195F01FD9919D00D58C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8195F61FD99A2500D58C09 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FA8195F81FD9A34600D58C09 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		FA889C381FE3FB6F0028EEAF /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FAC589C91FE1A0B9000FC3EE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,10 +62,11 @@
 		FA8195E31FD9919D00D58C09 /* Drunk Finger */ = {
 			isa = PBXGroup;
 			children = (
+				FA889C371FE3FB2F0028EEAF /* Designables */,
 				FA8195E41FD9919D00D58C09 /* AppDelegate.swift */,
+				FA8195F61FD99A2500D58C09 /* TableViewCell.swift */,
 				FA8195E61FD9919D00D58C09 /* ViewController.swift */,
 				FA8195F81FD9A34600D58C09 /* TextViewController.swift */,
-				FA8195F61FD99A2500D58C09 /* TableViewCell.swift */,
 				FAC589C91FE1A0B9000FC3EE /* Data.swift */,
 				FA8195E81FD9919D00D58C09 /* Main.storyboard */,
 				FA8195EB1FD9919D00D58C09 /* Assets.xcassets */,
@@ -71,6 +74,14 @@
 				FA8195F01FD9919D00D58C09 /* Info.plist */,
 			);
 			path = "Drunk Finger";
+			sourceTree = "<group>";
+		};
+		FA889C371FE3FB2F0028EEAF /* Designables */ = {
+			isa = PBXGroup;
+			children = (
+				FA889C381FE3FB6F0028EEAF /* Button.swift */,
+			);
+			path = Designables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8195F71FD99A2500D58C09 /* TableViewCell.swift in Sources */,
+				FA889C391FE3FB6F0028EEAF /* Button.swift in Sources */,
 				FAC589CA1FE1A0B9000FC3EE /* Data.swift in Sources */,
 				FA8195E71FD9919D00D58C09 /* ViewController.swift in Sources */,
 				FA8195E51FD9919D00D58C09 /* AppDelegate.swift in Sources */,
@@ -223,7 +235,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -274,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

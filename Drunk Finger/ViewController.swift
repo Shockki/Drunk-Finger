@@ -11,8 +11,6 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableAddPlayers: UITableView!
-    @IBOutlet weak var buttonAddPlayers: UIButton!
-    @IBOutlet weak var buttonGo: UIButton!
     
     var players: [String] = []
     var pPp: [String] = []
@@ -21,39 +19,51 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonAddPlayers.layer.cornerRadius = 23
-        buttonGo.layer.cornerRadius = 23
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        tableAddPlayers.allowsSelection = false
         
     }
     @IBAction func buttonAddPlayers(_ sender: Any) {
         playersCount += 1
         number = 1
         tableAddPlayers.numberOfRows(inSection: playersCount)
+        reloadTable()
         UIView.animate(withDuration: 0.3, animations: {
             self.tableAddPlayers.reloadData()
         })
     }
     
     @IBAction func buttonGo(_ sender: Any) {
+        number = 1
         tableAddPlayers.reloadData()
+        reloadTable()
+//        print("button")
+//        performSegue(withIdentifier: "goText", sender: self)
+        print("Button - \(players)")
+
+    }
+    
+    func reloadTable() {
         for p in pPp {
             if players.isEmpty {
                 players.append(p)
             } else {
-                var check: [String] = []
+                var check: Bool = false
                 for player in players {
                     if p == player {
-                        check.append(p)
+                        check = true
                     }
                 }
-                if check.isEmpty {
+                if check == false {
                     players.append(p)
                 }
             }
         }
-//        performSegue(withIdentifier: "goText", sender: self)
-        print("Button - \(players)")
-
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -72,21 +82,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if cell.playerField.text! != "" {
             pPp.append(cell.playerField.text!)
         }
-        
-//        players = pPp
-//        print("Cell - \(players)")
+        for p in pPp {
+            if players.isEmpty {
+                players.append(p)
+            } else {
+                var check: Bool = false
+                for player in players {
+                    if p == player {
+                        check = true
+                    }
+                }
+                if check == false {
+                    players.append(p)
+                }
+            }
+        }
+//        print("CellPlayers - \(players)")
+//        print("Cell - \(pPp)")
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "goText" {
             let destVC: TextViewController = segue.destination as! TextViewController
             for player in players {
                 destVC.players.append(player)
             }
         }
-        
+        print("prepare for segue")
     }
 
 

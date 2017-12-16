@@ -11,19 +11,20 @@ class Data {
     private var name_0: String = ""
     private var name_1: String = ""
     private var name_2: String = ""
-    private var textArray: [String] = []
+//    private var texts: [String] = []
     
-    func text(_ name_0: String,_ name_1: String,_ name_2: String) {
+    func allTexts(_ name_0: String,_ name_1: String,_ name_2: String) -> [String]{
         let textArray: [String] = [
-            "bla bla \(name_0) bla bla \(name_1) bla bla",
-            "\(name_0) no no \(name_1) no no no",
-            "yes \(name_0) yes yes yes \(name_1)",
-            "kek kek \(name_0) kek \(name_1) kek kek kek \(name_2)"
+            "1. bla bla \(name_0) bla bla \(name_1) bla bla",
+            "2. \(name_0) no no \(name_1) no no no",
+            "3. yes \(name_0) yes yes yes \(name_1)",
+            "4. kek kek \(name_0) kek \(name_1) kek kek kek \(name_2)"
         ]
-        //        text = textArray
+//        texts = textArray
+        return textArray
     }
     
-    private func randNum(_ n: Int) -> Int{
+    func randNum(_ n: Int) -> Int{
         return Int(arc4random_uniform(UInt32(n)))
     }
     
@@ -43,17 +44,14 @@ class Data {
         print(name_0, name_1, name_2)
     }
     
-    func returnText(players: [String], tx: [String]) -> String {
-        playerRandom(players)
-        var t: String = ""
-        if tx.isEmpty {
-            print("Empty")
-            text(name_0, name_1, name_2)
-        } else {
-            
-        }
-        return t
+    private func returnAllTexts() -> String {
+        var texts = allTexts(name_0, name_1, name_2)
+        return texts[randNum(texts.count)]
     }
     
-    
+    func returnText(players: [String]) -> String {
+        playerRandom(players)
+        var texts = allTexts(name_0, name_1, name_2)
+        return texts[randNum(texts.count)]
+    }
 }
