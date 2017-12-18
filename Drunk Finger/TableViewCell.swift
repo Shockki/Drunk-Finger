@@ -20,10 +20,5 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        print("lol")
-        return true
-    }
 
 }

@@ -21,15 +21,27 @@ class TextViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Players - \(players)")
-//        labelText.text! = data.returnText(players: players)
+        labelText.frame = CGRect(x: labelText.frame.origin.x, y: labelText.frame.origin.y, width: labelText.frame.size.width, height: labelText.frame.size.height)
+        labelText.text! = data.returnText(players: players)
         
     }
 
-    @IBAction func buttonAction(_ sender: Any) {
-
-        view.backgroundColor = backColors[data.randNum(backColors.count)]
+    @IBAction func tapAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.backgroundColor = self.backColors[self.data.randNum(self.backColors.count)]
+        })
+        labelText.alpha = 0
+        labelText.frame = CGRect(x: labelText.frame.origin.x + 500, y: labelText.frame.origin.y, width: labelText.frame.size.width, height: labelText.frame.size.height)
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.labelText.frame = CGRect(x: self.labelText.frame.origin.x - 500, y: self.labelText.frame.origin.y, width: self.labelText.frame.size.width, height: self.labelText.frame.size.height)
+            self.labelText.alpha = 1
+        })
         labelText.text! = data.returnText(players: players)
+    }
+    
+    @IBAction func buttonBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
 }

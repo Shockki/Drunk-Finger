@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var tableAddPlayers: UITableView!
     
@@ -38,10 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         number = 1
         tableAddPlayers.reloadData()
         reloadTable()
-//        print("button")
-//        performSegue(withIdentifier: "goText", sender: self)
-        print("Button - \(players)")
-
+        performSegue(withIdentifier: "goText", sender: self)
     }
     
     func reloadTable() {
@@ -61,8 +58,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        number = 1
+        tableAddPlayers.reloadData()
+        reloadTable()
         self.view.endEditing(true)
     }
     
@@ -76,29 +76,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableAddPlayers.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        cell.layer.cornerRadius = 23
+        cell.playerField.leftView = UIView(frame: .init(x: 0, y: 0, width: 8, height: 0))
+        cell.playerField.leftViewMode = .always
         cell.playerField.placeholder = "Игрок " + String(number)
         number += 1
         
         if cell.playerField.text! != "" {
             pPp.append(cell.playerField.text!)
         }
-        for p in pPp {
-            if players.isEmpty {
-                players.append(p)
-            } else {
-                var check: Bool = false
-                for player in players {
-                    if p == player {
-                        check = true
-                    }
-                }
-                if check == false {
-                    players.append(p)
-                }
-            }
-        }
-//        print("CellPlayers - \(players)")
-//        print("Cell - \(pPp)")
         return cell
     }
     
@@ -109,7 +95,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 destVC.players.append(player)
             }
         }
-        print("prepare for segue")
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
     }
 
 
