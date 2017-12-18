@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var tableAddPlayers: UITableView!
+    @IBOutlet weak var labelNotLess: UILabel!
+    @IBOutlet weak var background: UIView!
+    @IBOutlet weak var warning: View!
     
     var players: [String] = []
     var pPp: [String] = []
@@ -21,9 +24,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        background.alpha = 1
+        warning.alpha = 1
         tableAddPlayers.allowsSelection = false
+        labelNotLess.alpha = 0
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        number = 1
+        players.removeAll()
+        pPp.removeAll()
+        tableAddPlayers.reloadData()
+    }
+    
     @IBAction func buttonAddPlayers(_ sender: Any) {
         playersCount += 1
         number = 1
@@ -35,10 +50,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func buttonGo(_ sender: Any) {
-        number = 1
-        tableAddPlayers.reloadData()
-        reloadTable()
-        performSegue(withIdentifier: "goText", sender: self)
+            number = 1
+            tableAddPlayers.reloadData()
+            reloadTable()
+        if players.count < 3 {
+            labelNotLess.alpha = 1
+            labelNotLess.transform = CGAffineTransform(scaleX: 0.3, y: 2)
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .allowUserInteraction, animations: {
+                self.labelNotLess.transform = .identity
+            })
+            print("< 3 - \(players)")
+        }else{
+            labelNotLess.alpha = 0
+            performSegue(withIdentifier: "goText", sender: self)
+            print("norm - \(players)")
+        }
     }
     
     func reloadTable() {
@@ -58,7 +84,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-
+    @IBAction func buttonWarningNext(_ sender: Any) {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.background.alpha = 0
+            self.warning.alpha = 0
+        })
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         number = 1
         tableAddPlayers.reloadData()

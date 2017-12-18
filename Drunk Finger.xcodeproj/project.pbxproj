@@ -16,6 +16,7 @@
 		FA8195F91FD9A34600D58C09 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8195F81FD9A34600D58C09 /* TextViewController.swift */; };
 		FA889C391FE3FB6F0028EEAF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA889C381FE3FB6F0028EEAF /* Button.swift */; };
 		FAC589CA1FE1A0B9000FC3EE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC589C91FE1A0B9000FC3EE /* Data.swift */; };
+		FAD526151FE86B1000F7DB4E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD526141FE86B1000F7DB4E /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA8195F81FD9A34600D58C09 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		FA889C381FE3FB6F0028EEAF /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FAC589C91FE1A0B9000FC3EE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		FAD526141FE86B1000F7DB4E /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				FA889C381FE3FB6F0028EEAF /* Button.swift */,
+				FAD526141FE86B1000F7DB4E /* View.swift */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				FAC589CA1FE1A0B9000FC3EE /* Data.swift in Sources */,
 				FA8195E71FD9919D00D58C09 /* ViewController.swift in Sources */,
 				FA8195E51FD9919D00D58C09 /* AppDelegate.swift in Sources */,
+				FAD526151FE86B1000F7DB4E /* View.swift in Sources */,
 				FA8195F91FD9A34600D58C09 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

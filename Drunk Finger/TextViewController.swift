@@ -21,8 +21,7 @@ class TextViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelText.frame = CGRect(x: labelText.frame.origin.x, y: labelText.frame.origin.y, width: labelText.frame.size.width, height: labelText.frame.size.height)
-        labelText.text! = data.returnText(players: players)
+        labelText.text! = data.beginningOfTheGame(players: players)
         
     }
 
