@@ -26,6 +26,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.shadowImage = UIImage()
         background.alpha = 1
         warning.alpha = 1
+        warning.transform = CGAffineTransform(scaleX: 0.3, y: 2)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .allowUserInteraction, animations: {
+            self.warning.transform = .identity
+        })
         tableAddPlayers.allowsSelection = false
         labelNotLess.alpha = 0
         
@@ -87,6 +91,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func buttonWarningNext(_ sender: Any) {
         UIView.animate(withDuration: 0.4, animations: {
             self.background.alpha = 0
+            self.warning.frame = CGRect(x: self.warning.frame.origin.x + 300, y: self.warning.frame.origin.y, width: self.warning.frame.size.width, height: self.warning.frame.size.height)
             self.warning.alpha = 0
         })
     }
