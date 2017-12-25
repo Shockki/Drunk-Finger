@@ -13,10 +13,16 @@ class TextViewController: UIViewController {
     let data: Data = Data()
     let superGame: SuperGame = SuperGame()
     
-    
     @IBOutlet var gestureRec: UITapGestureRecognizer!
+    @IBOutlet var gestureSG: UITapGestureRecognizer!
     @IBOutlet weak var labelText: UILabel!
     @IBOutlet weak var viewSuperGame: UIView!
+    @IBOutlet weak var rules: UIView!
+    @IBOutlet weak var textRules: UILabel!
+    @IBOutlet weak var buttonNextRules: Button!
+    @IBOutlet weak var buttonStartSG: Button!
+    @IBOutlet weak var buttonNext: Button!
+    
     @IBOutlet weak var buttonTrue: Button!
     @IBOutlet weak var buttonFalse: Button!
     @IBOutlet weak var labelSuperGame: UILabel!
@@ -34,31 +40,24 @@ class TextViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        labelText.text! = data.beginningOfTheGame(players: players)
-        gestureRec.isEnabled = false
-        
-        
-        check = superGame.starSuperGame(label: labelSuperGame)
-        labelTimer.text = "15"
-        timerBack()
-        print(score)
-        
-        
+        viewSuperGame.alpha = 0
+        rules.alpha = 0
+        labelText.text! = data.beginningOfTheGame(players: players)
     }
 
     @IBAction func tapAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.view.backgroundColor = self.backColors[self.data.randNum(self.backColors.count)]
-        })
-        labelText.alpha = 0
-        labelText.frame = CGRect(x: labelText.frame.origin.x + 500, y: labelText.frame.origin.y, width: labelText.frame.size.width, height: labelText.frame.size.height)
-        
-        UIView.animate(withDuration: 0.2, animations: {
-            self.labelText.frame = CGRect(x: self.labelText.frame.origin.x - 500, y: self.labelText.frame.origin.y, width: self.labelText.frame.size.width, height: self.labelText.frame.size.height)
-            self.labelText.alpha = 1
-        })
-        labelText.text! = data.returnText(players: players)
-        print("lol")
+        if  data.countText().count % 10 == 0 {
+            gestureRec.isEnabled = false
+            viewSuperGame.alpha = 0
+            rules.alpha = 1
+            buttonNextRules.alpha = 1
+            buttonStartSG.alpha = 0
+            time = 15
+            score = 0
+            textRules.text! = superGame.rules(players: players)[0]
+        }else{
+            animateLabel()
+        }
     }
     
     @IBAction func buttonBack(_ sender: Any) {
@@ -66,6 +65,24 @@ class TextViewController: UIViewController {
     }
     
 //------------------------SuperGame-----------------------
+    
+    
+    @IBAction func buttonNextRules(_ sender: Any) {
+        textRules.text! = superGame.rules(players: players)[1]
+        buttonNextRules.alpha = 0
+        buttonStartSG.alpha = 1
+        
+    }
+    @IBAction func buttonStartSG(_ sender: Any) {
+        rules.alpha = 0
+        viewSuperGame.alpha = 1
+        buttonTrue.alpha = 1
+        buttonFalse.alpha = 1
+        buttonNext.alpha = 0
+        labelTimer.text = "15"
+        check = superGame.starSuperGame(label: labelSuperGame)
+        timerBack()
+    }
     
     @IBAction func buttonTrue(_ sender: Any) {
         if check == true {
@@ -92,21 +109,14 @@ class TextViewController: UIViewController {
     func changeButtonPosition() {
         check = superGame.starSuperGame(label: labelSuperGame)
         let button = UIButton()
-        if score == 4 || score == 9{
-            button.frame = buttonTrue.frame
-            buttonTrue.frame = buttonFalse.frame
-            buttonFalse.frame = button.frame
-        }
-        if score == 6 || score == 10 {
+        if score == 4 || score == 6 || score == 9 || score == 10{
             button.frame = buttonTrue.frame
             buttonTrue.frame = buttonFalse.frame
             buttonFalse.frame = button.frame
         }
         labelScore.text = "\(score) из 15"
     }
-    
-    
-    
+
     func timerBack()  {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TextViewController.action), userInfo: nil, repeats: true)
     }
@@ -118,12 +128,36 @@ class TextViewController: UIViewController {
             timer.invalidate()
             buttonTrue.alpha = 0
             buttonFalse.alpha = 0
+            buttonNext.alpha = 1
             if score < 15 {
                 labelSuperGame.text = "Пей! Гы-Гы-Гы!"
             }else{
                 labelSuperGame.text = "Красава!"
             }
         }
+    }
+    @IBAction func buttonNext(_ sender: Any) {
+        viewSuperGame.alpha = 0
+        rules.alpha = 0
+        gestureRec.isEnabled = true
+        animateLabel()
+    }
+    
+//------------------------------------------------------
+    
+    func animateLabel() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.backgroundColor = self.backColors[self.data.randNum(self.backColors.count)]
+        })
+        
+        labelText.alpha = 0
+        labelText.frame = CGRect(x: labelText.frame.origin.x + 500, y: labelText.frame.origin.y, width: labelText.frame.size.width, height: labelText.frame.size.height)
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.labelText.frame = CGRect(x: self.labelText.frame.origin.x - 500, y: self.labelText.frame.origin.y, width: self.labelText.frame.size.width, height: self.labelText.frame.size.height)
+            self.labelText.alpha = 1
+        })
+        labelText.text! = data.returnText(players: players)
     }
     
 }

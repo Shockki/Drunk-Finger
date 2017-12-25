@@ -109,4 +109,8 @@ class Data {
             return "The End:)"
         }
     }
+    
+    func countText() -> [Int] {
+        return count
+    }
 }
