@@ -29,7 +29,7 @@ class TextViewController: UIViewController {
     @IBOutlet weak var labelTimer: UILabel!
     @IBOutlet weak var labelScore: UILabel!
     
-    let backColors: [UIColor] = [#colorLiteral(red: 0, green: 0.8881693865, blue: 1, alpha: 1), #colorLiteral(red: 0.001198597251, green: 0.890129283, blue: 0.1998577118, alpha: 1), #colorLiteral(red: 1, green: 0.6365509153, blue: 0.9711150977, alpha: 1), #colorLiteral(red: 0.2598219664, green: 0.4993801239, blue: 1, alpha: 1), #colorLiteral(red: 0.9871906726, green: 0.3625296618, blue: 0.3683782933, alpha: 1), #colorLiteral(red: 0.9818171003, green: 0.8430654574, blue: 0.05065612521, alpha: 1)]
+    let backColors: [UIColor] = [#colorLiteral(red: 0, green: 0.776584654, blue: 0.8743654823, alpha: 1), #colorLiteral(red: 0.001281706249, green: 0.7401848033, blue: 0.1860074805, alpha: 1), #colorLiteral(red: 0.8324079949, green: 0.5268384427, blue: 0.8114537006, alpha: 1), #colorLiteral(red: 0.2598219664, green: 0.4993801239, blue: 1, alpha: 1), #colorLiteral(red: 0.8441465736, green: 0.3226962472, blue: 0.3305995261, alpha: 1), #colorLiteral(red: 0.8609018085, green: 0.7357219774, blue: 0.06335742704, alpha: 1)]
 //    var players: [String] = ["Миша", "Саша", "Коля", "Лиза"]
     var players: [String] = []
     var text: [String] = []
@@ -130,9 +130,9 @@ class TextViewController: UIViewController {
             buttonFalse.alpha = 0
             buttonNext.alpha = 1
             if score < 15 {
-                labelSuperGame.text = "Пей! Гы-Гы-Гы!"
+                labelSuperGame.text = "\(score) из 15\n Пей!\n Гы-Гы-Гы!"
             }else{
-                labelSuperGame.text = "Красава!"
+                labelSuperGame.text = "\(score) из 15\n Красава!"
             }
         }
     }
