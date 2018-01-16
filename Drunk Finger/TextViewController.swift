@@ -11,7 +11,7 @@ import UIKit
 class TextViewController: UIViewController {
     
     let data: Data = Data()
-    let superGame: SuperGame = SuperGame()
+    let dataSuperGames: DataSuperGames = DataSuperGames()
     
     @IBOutlet var gestureRec: UITapGestureRecognizer!
     @IBOutlet var gestureSG: UITapGestureRecognizer!
@@ -54,7 +54,7 @@ class TextViewController: UIViewController {
             buttonStartSG.alpha = 0
             time = 15
             score = 0
-            textRules.text! = superGame.rules(players: players)[0]
+            textRules.text! = dataSuperGames.rules(players: players)[0]
         }else{
             animateLabel()
         }
@@ -68,7 +68,7 @@ class TextViewController: UIViewController {
     
     
     @IBAction func buttonNextRules(_ sender: Any) {
-        textRules.text! = superGame.rules(players: players)[1]
+        textRules.text! = dataSuperGames.rules(players: players)[1]
         buttonNextRules.alpha = 0
         buttonStartSG.alpha = 1
         
@@ -80,7 +80,7 @@ class TextViewController: UIViewController {
         buttonFalse.alpha = 1
         buttonNext.alpha = 0
         labelTimer.text = "15"
-        check = superGame.starSuperGame(label: labelSuperGame)
+        check = dataSuperGames.startSuperGame(label: labelSuperGame)
         timerBack()
     }
     
@@ -107,7 +107,7 @@ class TextViewController: UIViewController {
     }
     
     func changeButtonPosition() {
-        check = superGame.starSuperGame(label: labelSuperGame)
+        check = dataSuperGames.startSuperGame(label: labelSuperGame)
         let button = UIButton()
         if score == 4 || score == 6 || score == 9 || score == 10{
             button.frame = buttonTrue.frame

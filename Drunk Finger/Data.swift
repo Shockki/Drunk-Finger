@@ -49,6 +49,11 @@ class Data {
         return textArray
     }
     
+    func countQuestions() -> Int {
+        let count =  allTexts(name_0, name_1, name_2).count
+        return count
+    }
+    
     func randNum(_ n: Int) -> Int{
         return Int(arc4random_uniform(UInt32(n)))
     }
