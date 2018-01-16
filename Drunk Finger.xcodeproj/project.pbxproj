@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA6FAE361FEC1980007FD37D /* SuperGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAE351FEC1980007FD37D /* SuperGame.swift */; };
 		FA8195E51FD9919D00D58C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8195E41FD9919D00D58C09 /* AppDelegate.swift */; };
 		FA8195E71FD9919D00D58C09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8195E61FD9919D00D58C09 /* ViewController.swift */; };
 		FA8195EA1FD9919D00D58C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8195E81FD9919D00D58C09 /* Main.storyboard */; };
@@ -18,12 +17,12 @@
 		FA889C391FE3FB6F0028EEAF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA889C381FE3FB6F0028EEAF /* Button.swift */; };
 		FAAD827F200E34AF0094B967 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD827E200E34AF0094B967 /* AdminTableViewController.swift */; };
 		FAAD8281200E3E4F0094B967 /* DataSuperGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD8280200E3E4F0094B967 /* DataSuperGames.swift */; };
+		FAAD8283200E3FC40094B967 /* SuperGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD8282200E3FC40094B967 /* SuperGamesViewController.swift */; };
 		FAC589CA1FE1A0B9000FC3EE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC589C91FE1A0B9000FC3EE /* Data.swift */; };
 		FAD526151FE86B1000F7DB4E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD526141FE86B1000F7DB4E /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA6FAE351FEC1980007FD37D /* SuperGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperGame.swift; sourceTree = "<group>"; };
 		FA8195E11FD9919D00D58C09 /* Drunk Finger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drunk Finger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8195E41FD9919D00D58C09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8195E61FD9919D00D58C09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		FA889C381FE3FB6F0028EEAF /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FAAD827E200E34AF0094B967 /* AdminTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
 		FAAD8280200E3E4F0094B967 /* DataSuperGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSuperGames.swift; sourceTree = "<group>"; };
+		FAAD8282200E3FC40094B967 /* SuperGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperGamesViewController.swift; sourceTree = "<group>"; };
 		FAC589C91FE1A0B9000FC3EE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		FAD526141FE86B1000F7DB4E /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,15 +70,14 @@
 		FA8195E31FD9919D00D58C09 /* Drunk Finger */ = {
 			isa = PBXGroup;
 			children = (
-				FA889C371FE3FB2F0028EEAF /* Designables */,
 				FA8195E41FD9919D00D58C09 /* AppDelegate.swift */,
 				FA8195F61FD99A2500D58C09 /* TableViewCell.swift */,
+				FA889C371FE3FB2F0028EEAF /* Designables */,
+				FAAD8286200E40260094B967 /* Data */,
 				FA8195E61FD9919D00D58C09 /* ViewController.swift */,
 				FA8195F81FD9A34600D58C09 /* TextViewController.swift */,
+				FAAD8282200E3FC40094B967 /* SuperGamesViewController.swift */,
 				FAAD827E200E34AF0094B967 /* AdminTableViewController.swift */,
-				FAC589C91FE1A0B9000FC3EE /* Data.swift */,
-				FA6FAE351FEC1980007FD37D /* SuperGame.swift */,
-				FAAD8280200E3E4F0094B967 /* DataSuperGames.swift */,
 				FA8195E81FD9919D00D58C09 /* Main.storyboard */,
 				FA8195EB1FD9919D00D58C09 /* Assets.xcassets */,
 				FA8195ED1FD9919D00D58C09 /* LaunchScreen.storyboard */,
@@ -94,6 +93,15 @@
 				FAD526141FE86B1000F7DB4E /* View.swift */,
 			);
 			path = Designables;
+			sourceTree = "<group>";
+		};
+		FAAD8286200E40260094B967 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FAC589C91FE1A0B9000FC3EE /* Data.swift */,
+				FAAD8280200E3E4F0094B967 /* DataSuperGames.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,8 +178,8 @@
 			files = (
 				FA8195F71FD99A2500D58C09 /* TableViewCell.swift in Sources */,
 				FA889C391FE3FB6F0028EEAF /* Button.swift in Sources */,
+				FAAD8283200E3FC40094B967 /* SuperGamesViewController.swift in Sources */,
 				FAC589CA1FE1A0B9000FC3EE /* Data.swift in Sources */,
-				FA6FAE361FEC1980007FD37D /* SuperGame.swift in Sources */,
 				FAAD827F200E34AF0094B967 /* AdminTableViewController.swift in Sources */,
 				FAAD8281200E3E4F0094B967 /* DataSuperGames.swift in Sources */,
 				FA8195E71FD9919D00D58C09 /* ViewController.swift in Sources */,

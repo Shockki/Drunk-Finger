@@ -12,6 +12,9 @@ class AdminTableViewController: UITableViewController {
 
     let data: Data = Data()
     
+    let players = ["Игрок"]
+    
+    
     @IBOutlet weak var countQuestions: UITableViewCell!
     
     override func viewDidLoad() {
@@ -21,6 +24,12 @@ class AdminTableViewController: UITableViewController {
         countQuestions.detailTextLabel?.text = String(data.countQuestions())
         
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goSG" {
+            let destVC: SuperGamesViewController = segue.destination as! SuperGamesViewController
+            destVC.players = players
+        }
+    }
 
 }

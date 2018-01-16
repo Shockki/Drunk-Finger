@@ -42,9 +42,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qF-yE-x4Y">
                                 <rect key="frame" x="9" y="635" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
                                 <connections>
                                     <segue destination="82n-PN-WAg" kind="show" id="ceE-du-5wi"/>
                                 </connections>
@@ -230,7 +227,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="z2h-wo-HIr" kind="show" id="TuR-2Q-nbw"/>
+                                            <segue destination="z2h-wo-HIr" kind="show" identifier="goSG" id="TuR-2Q-nbw"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -249,44 +246,15 @@
             </objects>
             <point key="canvasLocation" x="183" y="858"/>
         </scene>
-        <!--View Controller-->
+        <!--Super Games View Controller-->
         <scene sceneID="vfj-kp-4pe">
             <objects>
-                <viewController id="z2h-wo-HIr" sceneMemberID="viewController">
+                <viewController id="z2h-wo-HIr" customClass="SuperGamesViewController" customModule="Drunk_Finger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvj-o0-xHd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="suL-EZ-kef"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Eea-C0-Iha" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="895" y="858"/>
-        </scene>
-        <!--Text View Controller-->
-        <scene sceneID="LWT-Ya-Mnl">
-            <objects>
-                <viewController id="dFy-6L-svt" customClass="TextViewController" customModule="Drunk_Finger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ogj-xm-9tO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-Vw-Czb">
-                                <rect key="frame" x="16" y="81" width="343" height="542"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Лейбел Текст">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="34" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ji9-XN-CTb">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ji9-XN-CTb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -303,7 +271,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonFalse:" destination="dFy-6L-svt" eventType="touchUpInside" id="bZo-Yt-edn"/>
+                                            <action selector="buttonFalse:" destination="z2h-wo-HIr" eventType="touchUpInside" id="uLs-1c-fGT"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jjb-hu-Po9">
@@ -348,7 +316,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonNext:" destination="dFy-6L-svt" eventType="touchUpInside" id="ibW-oq-waJ"/>
+                                            <action selector="buttonNext:" destination="z2h-wo-HIr" eventType="touchUpInside" id="EdP-hp-0fC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmC-NY-cII" customClass="Button" customModule="Drunk_Finger" customModuleProvider="target">
@@ -360,13 +328,13 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonTrue:" destination="dFy-6L-svt" eventType="touchUpInside" id="AXM-vJ-8gw"/>
+                                            <action selector="buttonTrue:" destination="z2h-wo-HIr" eventType="touchUpInside" id="9mI-y9-qcA"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUp-45-lPQ">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUp-45-lPQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -402,7 +370,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonStartSG:" destination="dFy-6L-svt" eventType="touchUpInside" id="5jd-ao-L3v"/>
+                                            <action selector="buttonStartSG:" destination="z2h-wo-HIr" eventType="touchUpInside" id="GHq-aF-RNT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGK-75-3cb" customClass="Button" customModule="Drunk_Finger" customModuleProvider="target">
@@ -419,13 +387,57 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonNextRules:" destination="dFy-6L-svt" eventType="touchUpInside" id="H8J-zA-XrH"/>
+                                            <action selector="buttonNextRules:" destination="z2h-wo-HIr" eventType="touchUpInside" id="L9V-TH-dKL"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                             </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="suL-EZ-kef"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonFalse" destination="GnX-SM-nJk" id="Wwg-2q-yg1"/>
+                        <outlet property="buttonNext" destination="jpm-0Q-JbF" id="cVS-82-pjL"/>
+                        <outlet property="buttonNextRules" destination="iGK-75-3cb" id="8JD-3r-ZrC"/>
+                        <outlet property="buttonStartSG" destination="t6I-K9-EHb" id="qvP-A4-VgM"/>
+                        <outlet property="buttonTrue" destination="CmC-NY-cII" id="2sm-iJ-yWk"/>
+                        <outlet property="labelScore" destination="4th-m0-Ewb" id="tti-WL-tqg"/>
+                        <outlet property="labelSuperGame" destination="jjb-hu-Po9" id="F2J-LN-w3c"/>
+                        <outlet property="labelTimer" destination="336-ge-NEV" id="VKu-NH-2Vg"/>
+                        <outlet property="rules" destination="tUp-45-lPQ" id="1Hb-AC-HJ0"/>
+                        <outlet property="textRules" destination="UAk-8T-qg8" id="UQA-MP-P78"/>
+                        <outlet property="viewSuperGame" destination="Ji9-XN-CTb" id="RFd-pB-1v9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eea-C0-Iha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="914" y="858"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="LWT-Ya-Mnl">
+            <objects>
+                <viewController id="dFy-6L-svt" customClass="TextViewController" customModule="Drunk_Finger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ogj-xm-9tO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-Vw-Czb">
+                                <rect key="frame" x="16" y="81" width="343" height="542"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Лейбел Текст">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="34" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.91420605769904739" green="0.42001838383299983" blue="0.98181710025380708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -447,19 +459,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonFalse" destination="GnX-SM-nJk" id="s1g-sX-XDe"/>
-                        <outlet property="buttonNext" destination="jpm-0Q-JbF" id="xxv-Be-w8a"/>
-                        <outlet property="buttonNextRules" destination="iGK-75-3cb" id="vgf-6A-1h0"/>
-                        <outlet property="buttonStartSG" destination="t6I-K9-EHb" id="9sx-Ki-NAw"/>
-                        <outlet property="buttonTrue" destination="CmC-NY-cII" id="uR0-7m-3ci"/>
                         <outlet property="gestureRec" destination="zjj-oJ-Fbk" id="k3o-mR-cjV"/>
-                        <outlet property="labelScore" destination="4th-m0-Ewb" id="EVt-92-xBS"/>
-                        <outlet property="labelSuperGame" destination="jjb-hu-Po9" id="Bwm-uE-91h"/>
                         <outlet property="labelText" destination="DJI-Vw-Czb" id="fEO-lu-N8l"/>
-                        <outlet property="labelTimer" destination="336-ge-NEV" id="Lbf-OQ-AtU"/>
                         <outlet property="rules" destination="tUp-45-lPQ" id="RIv-rH-8pe"/>
-                        <outlet property="textRules" destination="UAk-8T-qg8" id="A1x-gh-woI"/>
                         <outlet property="viewSuperGame" destination="Ji9-XN-CTb" id="m2F-69-N1S"/>
+                        <segue destination="z2h-wo-HIr" kind="show" identifier="superGames" id="Ysj-6t-cBv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGy-Cp-NR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -487,7 +491,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="183" y="-583"/>
+            <point key="canvasLocation" x="182" y="-616"/>
         </scene>
     </scenes>
     <resources>
@@ -496,4 +500,7 @@
         <image name="add" width="28" height="28"/>
         <image name="back" width="16" height="14"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TuR-2Q-nbw"/>
+    </inferredMetricsTieBreakers>
 </document>
